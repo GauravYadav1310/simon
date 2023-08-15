@@ -7,7 +7,9 @@ var started=false;
 
 $(document).keypress(function(event){
     if(!started){
-        nextSequence();
+        setTimeout(function(){
+            nextSequence();
+        },500);
     }
 
 });
@@ -65,6 +67,9 @@ var currentlevel=0;
             setTimeout(function () {
                 $("body").css("background-color", "#011F3F");
             }, 1000);
+            currentlevel=0;
+            userClickedPattern=[];
+            gamePattern=[];
             started=false;
         }
     });
